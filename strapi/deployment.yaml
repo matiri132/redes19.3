@@ -2,13 +2,11 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: strapi-app
-  labels:
-    app: strapi-app
 spec:
   replicas: 1
-  selector:
-     matchLabels:
-        app: strapi-app 
+#  selector:
+#     matchLabels:
+#        app: strapi-app 
   template:
     metadata:
       labels:
@@ -17,6 +15,8 @@ spec:
       containers:
       - name: strapi-app
         image: strapi/strapi
+        ports:
+        - containerPort: 1337
         env:
         - name: APP_NAME
           value: "strapi-app"
@@ -40,5 +40,4 @@ spec:
           value: "localhost"
 #       volumeMounts:
 #        - mountPath: /usr/src/api/strapi-app
-        ports:
-        - containerPort: 1337
+        
