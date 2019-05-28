@@ -3,9 +3,6 @@ kind: Ingress
 metadata:
   name: strapi-ingress
 spec:
-  tls:
-    - hosts:
-      - strapiapp.buffer.com
   rules:
   - host: strapiapp.buffer.com
     http:
@@ -13,4 +10,4 @@ spec:
       - path: /admin
         backend:
           serviceName: strapi-svc
-          servicePort: 1337
+          servicePort: 8080
