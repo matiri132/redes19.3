@@ -17,7 +17,6 @@ spec:
       containers:
       - name: strapi-app
         image: strapi/strapi
-        imagePullPolicy: Always
         env:
         - name: APP_NAME
           value: "strapi-app"
