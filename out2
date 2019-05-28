@@ -1,0 +1,66 @@
+Name:               strapi-app-785584db5c-28f4g
+Namespace:          default
+Priority:           0
+PriorityClassName:  <none>
+Node:               microk8s/10.0.3.15
+Start Time:         Tue, 28 May 2019 17:50:05 +0000
+Labels:             app=strapi-app
+                    pod-template-hash=785584db5c
+Annotations:        <none>
+Status:             Running
+IP:                 10.1.1.16
+Controlled By:      ReplicaSet/strapi-app-785584db5c
+Containers:
+  strapi-app:
+    Container ID:   containerd://f80982a7624bddbdeaa777f935d9496d5bd3d1e36311f3603010841db70e24df
+    Image:          strapi/strapi
+    Image ID:       docker.io/strapi/strapi@sha256:cf04723e737c3c0dfc3c981b66b4d5ca5bdf5fb357c94c6cab38d47e66147ed0
+    Port:           1337/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 28 May 2019 17:54:51 +0000
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    1
+      Started:      Tue, 28 May 2019 17:53:09 +0000
+      Finished:     Tue, 28 May 2019 17:54:24 +0000
+    Ready:          True
+    Restart Count:  3
+    Environment:
+      APP_NAME:                          strapi-app
+      DATABASE_CLIENT:                   mongo
+      DATABASE_HOST:                     mongo-svc
+      DATABASE_PORT:                     27017
+      DATABASE_NAME:                     strapi
+      DATABASE_USERNAME:                 
+      DATABASE_PASSWORD:                 
+      DATABASE_SSL:                      false
+      DATABASE_AUTHENTICATION_DATABASE:  strapi
+      HOST:                              localhost
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-rhgvh (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-rhgvh:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-rhgvh
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type     Reason     Age                 From               Message
+  ----     ------     ----                ----               -------
+  Normal   Scheduled  4m47s               default-scheduler  Successfully assigned default/strapi-app-785584db5c-28f4g to microk8s
+  Warning  BackOff    17s (x3 over 2m2s)  kubelet, microk8s  Back-off restarting failed container
+  Normal   Pulling    6s (x4 over 4m46s)  kubelet, microk8s  Pulling image "strapi/strapi"
+  Normal   Pulled     2s (x4 over 4m43s)  kubelet, microk8s  Successfully pulled image "strapi/strapi"
+  Normal   Created    1s (x4 over 4m42s)  kubelet, microk8s  Created container strapi-app
+  Normal   Started    1s (x4 over 4m42s)  kubelet, microk8s  Started container strapi-app
+
