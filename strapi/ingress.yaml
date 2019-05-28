@@ -7,7 +7,7 @@ spec:
   - host: strapiapp.buffer.com
     http:
       paths:
-      - path: /admin
+      - path: /
         backend:
           serviceName: strapi-svc
           servicePort: 8080
