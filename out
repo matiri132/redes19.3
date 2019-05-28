@@ -1,0 +1,242 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2019-05-28T17:50:05Z"
+    generateName: strapi-app-785584db5c-
+    labels:
+      app: strapi-app
+      pod-template-hash: 785584db5c
+    name: strapi-app-785584db5c-28f4g
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: strapi-app-785584db5c
+      uid: 06cf5093-8171-11e9-904a-080027e325d0
+    resourceVersion: "36704"
+    selfLink: /api/v1/namespaces/default/pods/strapi-app-785584db5c-28f4g
+    uid: 06d2c9d3-8171-11e9-904a-080027e325d0
+  spec:
+    containers:
+    - env:
+      - name: APP_NAME
+        value: strapi-app
+      - name: DATABASE_CLIENT
+        value: mongo
+      - name: DATABASE_HOST
+        value: mongo-svc
+      - name: DATABASE_PORT
+        value: "27017"
+      - name: DATABASE_NAME
+        value: strapi
+      - name: DATABASE_USERNAME
+      - name: DATABASE_PASSWORD
+      - name: DATABASE_SSL
+        value: "false"
+      - name: DATABASE_AUTHENTICATION_DATABASE
+        value: strapi
+      - name: HOST
+        value: localhost
+      image: strapi/strapi
+      imagePullPolicy: Always
+      name: strapi-app
+      ports:
+      - containerPort: 1337
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-rhgvh
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: microk8s
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-rhgvh
+      secret:
+        defaultMode: 420
+        secretName: default-token-rhgvh
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2019-05-28T17:50:05Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2019-05-28T17:51:31Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2019-05-28T17:51:31Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2019-05-28T17:50:05Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://81939f89991ac22ac2a92575a0b2da10484a62818274c73d53df9de403d0213f
+      image: docker.io/strapi/strapi:latest
+      imageID: docker.io/strapi/strapi@sha256:cf04723e737c3c0dfc3c981b66b4d5ca5bdf5fb357c94c6cab38d47e66147ed0
+      lastState:
+        terminated:
+          containerID: containerd://377e3b9b5df5984aaa37cc1d1d2d5e00433f664ed9a4328f824da4ae4b68dcd9
+          exitCode: 1
+          finishedAt: "2019-05-28T17:51:26Z"
+          reason: Error
+          startedAt: "2019-05-28T17:50:10Z"
+      name: strapi-app
+      ready: true
+      restartCount: 1
+      state:
+        running:
+          startedAt: "2019-05-28T17:51:31Z"
+    hostIP: 10.0.3.15
+    phase: Running
+    podIP: 10.1.1.16
+    qosClass: BestEffort
+    startTime: "2019-05-28T17:50:05Z"
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2019-05-28T17:50:05Z"
+  generateName: strapi-app-785584db5c-
+  labels:
+    app: strapi-app
+    pod-template-hash: 785584db5c
+  name: strapi-app-785584db5c-28f4g
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: strapi-app-785584db5c
+    uid: 06cf5093-8171-11e9-904a-080027e325d0
+  resourceVersion: "36704"
+  selfLink: /api/v1/namespaces/default/pods/strapi-app-785584db5c-28f4g
+  uid: 06d2c9d3-8171-11e9-904a-080027e325d0
+spec:
+  containers:
+  - env:
+    - name: APP_NAME
+      value: strapi-app
+    - name: DATABASE_CLIENT
+      value: mongo
+    - name: DATABASE_HOST
+      value: mongo-svc
+    - name: DATABASE_PORT
+      value: "27017"
+    - name: DATABASE_NAME
+      value: strapi
+    - name: DATABASE_USERNAME
+    - name: DATABASE_PASSWORD
+    - name: DATABASE_SSL
+      value: "false"
+    - name: DATABASE_AUTHENTICATION_DATABASE
+      value: strapi
+    - name: HOST
+      value: localhost
+    image: strapi/strapi
+    imagePullPolicy: Always
+    name: strapi-app
+    ports:
+    - containerPort: 1337
+      protocol: TCP
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-rhgvh
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: microk8s
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-rhgvh
+    secret:
+      defaultMode: 420
+      secretName: default-token-rhgvh
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2019-05-28T17:50:05Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2019-05-28T17:51:31Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2019-05-28T17:51:31Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2019-05-28T17:50:05Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://81939f89991ac22ac2a92575a0b2da10484a62818274c73d53df9de403d0213f
+    image: docker.io/strapi/strapi:latest
+    imageID: docker.io/strapi/strapi@sha256:cf04723e737c3c0dfc3c981b66b4d5ca5bdf5fb357c94c6cab38d47e66147ed0
+    lastState:
+      terminated:
+        containerID: containerd://377e3b9b5df5984aaa37cc1d1d2d5e00433f664ed9a4328f824da4ae4b68dcd9
+        exitCode: 1
+        finishedAt: "2019-05-28T17:51:26Z"
+        reason: Error
+        startedAt: "2019-05-28T17:50:10Z"
+    name: strapi-app
+    ready: true
+    restartCount: 1
+    state:
+      running:
+        startedAt: "2019-05-28T17:51:31Z"
+  hostIP: 10.0.3.15
+  phase: Running
+  podIP: 10.1.1.16
+  qosClass: BestEffort
+  startTime: "2019-05-28T17:50:05Z"
