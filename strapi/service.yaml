@@ -6,7 +6,7 @@ metadata:
     app: strapi-app
 spec:
   ports:
-  - port: 8080
+  - port: 80
     targetPort: 1337
     protocol: TCP
     name: https

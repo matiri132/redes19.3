@@ -4,10 +4,10 @@ metadata:
   name: strapi-ingress
 spec:
   rules:
-  - host: strapiapp.buffer.com
+  - host: b.efn.unc.edu.ar
     http:
       paths:
-      - path: /
-        backend:
+      - backend:
           serviceName: strapi-svc
-          servicePort: 8080
+          servicePort: 80
+        path: /

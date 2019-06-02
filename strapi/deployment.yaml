@@ -4,9 +4,6 @@ metadata:
   name: strapi-app
 spec:
   replicas: 1
-#  selector:
-#     matchLabels:
-#        app: strapi-app 
   template:
     metadata:
       labels:
@@ -14,7 +11,8 @@ spec:
     spec:
       containers:
       - name: strapi-app
-        image: strapi/strapi
+       # image: strapi/strapi
+        image: matiri132/strapibuffer
         ports:
         - containerPort: 1337
         env:
@@ -37,7 +35,7 @@ spec:
         - name: DATABASE_AUTHENTICATION_DATABASE
           value: "strapi"
         - name: HOST
-          value: "localhost"
+          value: "127.0.0.1"
 #       volumeMounts:
 #        - mountPath: /usr/src/api/strapi-app
         
