@@ -12,7 +12,7 @@ spec:
       containers:
       - name: strapi-app
        # image: strapi/strapi
-        image: matiri132/strapibuffer
+        image: matiri132/strapibuffer:latest
         ports:
         - containerPort: 1337
         env:
